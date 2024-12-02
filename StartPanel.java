@@ -36,7 +36,7 @@ public class StartPanel extends JPanel {
         });
 
         leaderBoardButton.addActionListener(e -> {
-            System.out.println("Show LeaderBoard");
+            RobotPlatformer.startToLeaderBoard();
         });
 
         add(startButton);
