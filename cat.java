@@ -74,9 +74,9 @@ public class cat {
             g.drawImage(image, x, y, size, size, null);
             
             // Draw the bounding box
-            Rectangle boundingBox = getBoundingBox();
-            g.setColor(Color.RED); // Use a distinct color to highlight the bounding box
-            g.drawRect(boundingBox.x, boundingBox.y, boundingBox.width, boundingBox.height);
+            //Rectangle boundingBox = getBoundingBox();
+            //g.setColor(Color.RED); // Use a distinct color to highlight the bounding box
+            //g.drawRect(boundingBox.x, boundingBox.y, boundingBox.width, boundingBox.height);
         } else {
             g.setColor(Color.RED);
             g.fillRect(x, y, size, size);

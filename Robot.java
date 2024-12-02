@@ -98,9 +98,9 @@ public class Robot {
     int bodyHeight = size / 3;
 
     // Draw the bounding box
-    Rectangle boundingBox = getBoundingBox();
-    g.setColor(Color.RED); // Use a distinct color to highlight the bounding box
-    g.drawRect(boundingBox.x, boundingBox.y, boundingBox.width, boundingBox.height);
+    //Rectangle boundingBox = getBoundingBox();
+    //g.setColor(Color.RED); // Use a distinct color to highlight the bounding box
+    //g.drawRect(boundingBox.x, boundingBox.y, boundingBox.width, boundingBox.height);
 
     // Head
     g.setColor(Color.GRAY);

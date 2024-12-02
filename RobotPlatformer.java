@@ -67,7 +67,7 @@ public class RobotPlatformer extends JFrame {
         robotPlatformer.revalidate();
         robotPlatformer.repaint();
 
-        if (highScores.size() == 0 || score > highScores.get(highScores.size() - 1).getScore()) {
+        if (highScores.size() < 10 || score > highScores.get(highScores.size() - 1).getScore()) {
             addScore(score);
             sortScores();
             saveLeaderboard();
