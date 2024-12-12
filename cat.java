@@ -14,23 +14,28 @@ import java.awt.geom.AffineTransform;
 
 public class cat {
 
+    // privtae variable to hold the direction the cat is facing and moving
     private enum xDirection {
         RIGHT,
         LEFT;
     }
 
+    // to hold the image of the cat
     private BufferedImage image;
 
     private int x, y, size;
     private final int movementSpeed = 5;
     private final xDirection direction;
 
+    // this is to handle I-frames when the player is hit
     private boolean damagedPlayer = false;
 
+    // Only constructor
     public cat(int width, int y, int size) {
         this.y = y;
         this.size = size;
 
+        // Randomly select direction
         Random random = new Random();
         int randomDirection = random.nextInt(2);
 
@@ -49,18 +54,29 @@ public class cat {
         }
     }
 
+    // Getters
+
+    // The current X value of the cat
     public int getX() {
         return this.x;
     }
 
+    // Wither or not the player has been damaged since the 
     public boolean getDamagedPlayer() {
         return damagedPlayer;
     }
 
+    // this is to check wither or not the cat is intersecting with any other bounds
     public Rectangle getBoundingBox() {
         return new Rectangle(x + size / 3, y, size - size / 3, size);
     }
 
+    /*
+     * This method draws the cat based on the image. It also handles flipping the image if
+     *   the cat should be facing right. There is a commented out section of the code to be used
+     *   should I need to revisit collision detection, this helps visualize the bounds of the 
+     *   cat.
+     */
     public void draw(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
@@ -82,9 +98,12 @@ public class cat {
             g.fillRect(x, y, size, size);
         }
 
-        g2d.setTransform(new AffineTransform());
+        g2d.setTransform(new AffineTransform()); // reset the transform otherwise anything else drawn will be ties to the cats movement.
     }
 
+    /*
+     * This method handles the cats movements. As the cat doesn't jump, gravity need not be applied.
+     */
     public void moveCat() {
         switch (direction) {
             case LEFT:
@@ -96,6 +115,8 @@ public class cat {
         }
     }
 
+    // Setters
+    
     public void setDamagedPlayer(boolean damaged) {
         this.damagedPlayer = damaged;
     }

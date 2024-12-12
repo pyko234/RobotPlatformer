@@ -6,8 +6,9 @@ import java.awt.Rectangle;
 
 public class coin {
     private final int x, y, size;
-    private boolean collected;
+    private boolean collected; // This is to prevent a coin being collected muiltiple times
 
+    // Default Constructor
     public coin(int x, int y, int size) {
         this.x = x;
         this.y = y;
@@ -15,9 +16,13 @@ public class coin {
         this.collected = false;
     }
 
+    // Setters
+
     public void setCollected(boolean collected) {
         this.collected = collected;
     } 
+
+    // Getters
 
     public boolean getCollected() {
         return this.collected;
@@ -27,6 +32,9 @@ public class coin {
         return new Rectangle(x, y, size / 2, size);
     }
 
+    /*
+     * Draw the coin. The commented out section is to visual the bounds of the coins for collision detection. 
+     */
     public void draw(Graphics g) {
         g.setColor(Color.YELLOW);
         g.fillOval(x, y, size / 2, size);
